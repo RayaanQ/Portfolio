@@ -11,6 +11,7 @@
   const root = document.documentElement;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const finePointer = matchMedia('(pointer: fine)').matches;
+  const touch = matchMedia('(hover: none), (pointer: coarse)').matches;
   const DPR = Math.min(window.devicePixelRatio || 1, 2);
   const EMAIL = 'rayyaanquraishi@gmail.com';
 
@@ -848,12 +849,14 @@
       filtered = cmds.filter((c) => (c.g + ' ' + c.t).toLowerCase().includes(q));
       sel = Math.min(sel, Math.max(0, filtered.length - 1));
       list.innerHTML = filtered.length
-        ? filtered.map((c, i) => `<li role="option" aria-selected="${i === sel}" data-i="${i}"><span class="pk">${c.t}</span><span class="pg">${c.g}${c.k ? ' · ' + c.k : ''}</span></li>`).join('')
+        ? filtered.map((c, i) => `<li role="option" aria-selected="${i === sel}" data-i="${i}"><span class="pk">${c.t}</span><span class="pg">${c.g}${c.k && !touch ? ' · ' + c.k : ''}</span></li>`).join('')
         : '<li class="empty">No results. Try "work" or "theme"</li>';
       const cur = list.children[sel]; if (cur) cur.scrollIntoView({ block: 'nearest' });
     }
     function run(i) { const c = filtered[i]; if (!c) return; dlg.close(); setTimeout(c.run, 60); }
-    function show() { if (dlg.open) return; input.value = ''; sel = 0; render(); dlg.showModal(); input.focus(); }
+    // On touch screens the palette doubles as the site menu, so don't pop the keyboard over it.
+    if (touch) { const box = $('.palette__box', dlg); box.tabIndex = -1; box.setAttribute('autofocus', ''); input.placeholder = 'Search…'; }
+    function show() { if (dlg.open) return; input.value = ''; sel = 0; render(); dlg.showModal(); if (!touch) input.focus(); }
     input.addEventListener('input', () => { sel = 0; render(); });
     input.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowDown') { e.preventDefault(); sel = (sel + 1) % Math.max(1, filtered.length); render(); }
@@ -993,7 +996,12 @@
       else if (e.key.toLowerCase() === 't') toggleTheme();
     });
     const isMac = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
-    if (!isMac) $('#paletteBtn span').textContent = 'Ctrl K';
+    if (touch) {
+      root.classList.add('touch');
+      $('#paletteBtn span').textContent = 'Menu';
+      $('#heroHint').textContent = 'tap anywhere to fire a signal through the network ✦';
+      $('#footHint').innerHTML = 'Tap <kbd>&gt;_</kbd> for a terminal';
+    } else if (!isMac) $('#paletteBtn span').textContent = 'Ctrl K';
   }
 
   /* ------------------------------------------------------------------
