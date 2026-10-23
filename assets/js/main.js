@@ -678,6 +678,10 @@
     addEventListener('pointerdown', () => cur.classList.add('is-down'));
     addEventListener('pointerup', () => cur.classList.remove('is-down'));
     document.addEventListener('pointerover', (e) => cur.classList.toggle('is-hover', !!e.target.closest('a, button, .project, input, .chips li')));
+    const dialogs = $$('dialog');
+    const syncDialogs = () => root.classList.toggle('dialog-open', dialogs.some((d) => d.open));
+    const mo = new MutationObserver(syncDialogs);
+    dialogs.forEach((d) => mo.observe(d, { attributes: true, attributeFilter: ['open'] }));
     (function follow() {
       rx += (mx - rx) * 0.18; ry += (my - ry) * 0.18;
       ring.style.transform = `translate3d(${rx}px, ${ry}px, 0)`;
