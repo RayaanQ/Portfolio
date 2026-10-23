@@ -555,7 +555,7 @@
 
   function roles() {
     const el = $('#role');
-    const list = ['MComp AI @ NUS', 'building RAG pipelines', 'shipping LLM agents', 'forecasting with LSTMs', 'AWS Certified Developer', 'open to AI / ML roles'];
+    const list = ['MComp AI @ NUS', 'SWE Intern @ BIOTRONIK', 'building microservices', 'shipping LLM agents', 'building RAG pipelines', 'AWS Certified Developer', 'open to SWE & AI roles'];
     if (reduced) return;
     let i = 0;
     async function type(text) {
@@ -568,6 +568,7 @@
 
   const FACTS = [
     'I moved from Mumbai to Singapore to study AI.',
+    'I help roll out Claude Code to software teams at BIOTRONIK.',
     'I graduated with a 9.97 / 10 GPA. That last 0.03 still haunts me.',
     'I published at a Springer Nature conference before finishing my bachelor\'s.',
     'I was the Tech Head at MUN: mics, projectors and panic.',
@@ -877,7 +878,7 @@
       ['██████   ██████ ', '<span class="accent">guest</span>@<span class="accent">rayaan</span>'],
       ['██   ██ ██    ██', '----------------'],
       ['██████  ██    ██', '<span class="accent">OS</span>: rayaan.os 2026 (vanilla js)'],
-      ['██   ██ ██ ▄▄ ██', '<span class="accent">Host</span>: National University of Singapore'],
+      ['██   ██ ██ ▄▄ ██', '<span class="accent">Host</span>: NUS · BIOTRONIK'],
       ['██   ██  ██████ ', '<span class="accent">Kernel</span>: MComp, Artificial Intelligence'],
       ['            ▀▀  ', '<span class="accent">Shell</span>: python · c++ · javascript'],
       ['                ', '<span class="accent">Packages</span>: langchain, pytorch, fastapi, aws'],
@@ -900,8 +901,8 @@
   <span class="accent">clear</span>        clear the screen
   <span class="accent">exit</span>         close the terminal
 <span class="muted">…and maybe a secret or two. Try sudo.</span>`,
-      whoami: () => 'Rayaan Quraishi: AI engineer, MComp (AI) student at NUS, based in Singapore.',
-      about: () => 'I build intelligent systems: RAG pipelines, LLM agents and ML forecasters.\nB.E. Computer Engineering (GPA 9.97/10), AWS Certified Developer, Springer-published.',
+      whoami: () => 'Rayaan Quraishi: software & AI engineer, MComp (AI) student at NUS, Software Developer Intern at BIOTRONIK, based in Singapore.\nOpen to Software Development and AI Engineering roles.',
+      about: () => 'I build intelligent software: production microservices, RAG pipelines and LLM agents.\nMComp AI @ NUS (GPA 4.67/5), B.E. Computer Engineering (GPA 9.97/10), AWS Certified Developer, Springer-published.',
       projects: () => projects.map((p) => `<span class="accent">[${p.n}]</span> ${esc(p.title)}\n    <span class="muted">${esc(p.desc.slice(0, 96))}…</span>`).join('\n') + '\n\nType <span class="accent">open &lt;n&gt;</span> for the case study.',
       open: (arg) => {
         const p = projects.find((x) => String(x.n) === arg || x.id === arg);

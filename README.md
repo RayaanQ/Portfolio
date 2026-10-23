@@ -2,7 +2,7 @@
 
 # Rayaan Quraishi — Portfolio
 
-**AI engineer · MComp (AI) @ NUS · building RAG pipelines, LLM agents and ML forecasters**
+**Software & AI engineer · MComp (AI) @ NUS · SWE Intern @ BIOTRONIK · open to Software Development and AI Engineering roles**
 
 [**→ rayaanq.github.io/Portfolio**](https://rayaanq.github.io/Portfolio/)
 
