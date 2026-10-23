@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>404 — Rayaan Quraishi</title>
+  <link rel="icon" href="/Portfolio/assets/img/favicon.svg" type="image/svg+xml" />
+  <style>
+    :root { --bg: #0b0b0c; --fg: #ecebe6; --muted: #7d7c76; --accent: #d4ff3a; color-scheme: dark; }
+    @media (prefers-color-scheme: light) { :root { --bg: #f3f1ea; --fg: #111110; --muted: #74726b; --accent: #3f6a00; color-scheme: light; } }
+    html, body { height: 100%; margin: 0; }
+    body { display: grid; place-items: center; background: var(--bg); color: var(--fg); font: 16px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; padding: 16px; box-sizing: border-box; }
+    h1 { font: 700 clamp(5rem, 22vw, 14rem)/0.85 system-ui, sans-serif; letter-spacing: -0.06em; margin: 0 0 16px; }
+    h1 span { color: var(--accent); }
+    a { color: var(--accent); }
+    p { color: var(--muted); margin: 6px 0; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>404<span>.</span></h1>
+    <p>$ cd <span id="p"></span></p>
+    <p>bash: no such file or directory. The model hallucinated this page.</p>
+    <p style="margin-top:24px"><a href="/Portfolio/">← back to the portfolio</a></p>
+  </main>
+  <script>document.getElementById('p').textContent = location.pathname;</script>
+</body>
+</html>

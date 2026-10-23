@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Rayaan Quraishi — AI Engineer</title>
+  <meta name="description" content="Rayaan Quraishi — AI engineer and MComp (AI) student at NUS. I build RAG pipelines, LLM agents and ML forecasting systems." />
+  <meta name="author" content="Rayaan Quraishi" />
+  <meta name="theme-color" content="#0b0b0c" />
+  <link rel="canonical" href="https://rayaanq.github.io/Portfolio/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Rayaan Quraishi — AI Engineer" />
+  <meta property="og:description" content="RAG pipelines, LLM agents and ML forecasters that turn messy data into decisions." />
+  <meta property="og:url" content="https://rayaanq.github.io/Portfolio/" />
+  <meta property="og:image" content="https://rayaanq.github.io/Portfolio/assets/img/og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="manifest.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <script>
+    // Apply saved theme before paint to avoid a flash.
+    try {
+      var t = localStorage.getItem('rq-theme');
+      if (!t) t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      document.documentElement.dataset.theme = t;
+    } catch (e) {}
+    document.documentElement.classList.add('js');
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rayaan Quraishi",
+    "jobTitle": "AI Engineer",
+    "email": "mailto:rayyaanquraishi@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Singapore" },
+    "alumniOf": ["National University of Singapore", "University of Mumbai"],
+    "sameAs": ["https://github.com/RayaanQ", "https://www.linkedin.com/in/rayaan-quraishi"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- Boot sequence (first visit per session only) -->
+  <div class="boot" id="boot" aria-hidden="true">
+    <div class="boot__inner">
+      <pre class="boot__log" id="bootLog"></pre>
+      <div class="boot__bar"><span id="bootBar"></span></div>
+      <div class="boot__pct mono"><span id="bootPct">0</span>%</div>
+    </div>
+  </div>
+
+  <div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"><span id="progress"></span></div>
+
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__logo" aria-label="Rayaan Quraishi, back to top">
+      <span class="logo-name" aria-hidden="true"><span>R</span><span class="logo-ext">ayaan</span><span class="logo-gap"></span><span>Q</span><span class="logo-ext">uraishi</span></span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#work" data-nav>Work</a>
+      <a href="#about" data-nav>About</a>
+      <a href="#experience" data-nav>Experience</a>
+      <a href="#archive" data-nav>Archive</a>
+      <a href="#contact" data-nav>Contact</a>
+    </nav>
+    <div class="nav__actions">
+      <button class="kbd-btn" id="paletteBtn" type="button" aria-label="Open command menu">
+        <span class="mono">⌘K</span>
+      </button>
+      <button class="icon-btn" id="termBtn" type="button" aria-label="Open terminal" title="Terminal (`)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6l6 6-6 6M12 18h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle colour theme">
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <canvas class="hero__canvas" id="neural" aria-hidden="true"></canvas>
+      <div class="hero__meta mono">
+        <span>[ AI ENGINEER ]</span>
+        <span class="hide-sm">SINGAPORE · <span id="clock">--:--</span> SGT</span>
+        <span class="status"><i></i>Open to AI / ML roles</span>
+      </div>
+
+      <h1 class="hero__title" aria-label="Rayaan Quraishi">
+        <span class="line"><span class="scramble" data-text="RAYAAN">RAYAAN</span></span>
+        <span class="line line--indent"><span class="scramble" data-text="QURAISHI">QURAISHI</span><span class="hero__dot">.</span></span>
+      </h1>
+
+      <div class="hero__bottom">
+        <p class="hero__lede">
+          I build <em class="serif">intelligent</em> systems: RAG pipelines, LLM agents and ML forecasters
+          that turn messy data into <em class="serif">decisions</em>.
+        </p>
+        <div class="hero__role mono" aria-live="polite">
+          <span class="muted">currently →</span> <span id="role">MComp AI @ NUS</span><span class="caret">_</span>
+        </div>
+        <p class="hero__fact"><span class="muted">A random thing about me:</span> <button type="button" id="fact" class="fact" title="Click for another one">I moved from Mumbai to Singapore to study AI.</button></p>
+        <div class="hero__cta">
+          <a class="btn btn--primary magnetic" href="#work"><span>See my work</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn--ghost magnetic" href="#contact"><span>Get in touch</span></a>
+          <a class="btn btn--ghost magnetic" id="resumeBtn" href="assets/Rayaan_Quraishi_Resume.pdf" target="_blank" rel="noopener" hidden><span>Résumé ↗</span></a>
+        </div>
+      </div>
+
+      <p class="hero__hint mono hide-sm">click anywhere to fire a signal through the network ✦</p>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>LangChain</span><i>✦</i><span>RAG</span><i>✦</i><span>LLM Agents</span><i>✦</i><span>PyTorch</span><i>✦</i><span>TensorFlow</span><i>✦</i><span>FastAPI</span><i>✦</i><span>AWS</span><i>✦</i><span>Docker</span><i>✦</i><span>XGBoost</span><i>✦</i><span>LSTM</span><i>✦</i><span>React</span><i>✦</i><span>Node.js</span><i>✦</i><span>MongoDB</span><i>✦</i><span>Hadoop</span><i>✦</i>
+        <span>LangChain</span><i>✦</i><span>RAG</span><i>✦</i><span>LLM Agents</span><i>✦</i><span>PyTorch</span><i>✦</i><span>TensorFlow</span><i>✦</i><span>FastAPI</span><i>✦</i><span>AWS</span><i>✦</i><span>Docker</span><i>✦</i><span>XGBoost</span><i>✦</i><span>LSTM</span><i>✦</i><span>React</span><i>✦</i><span>Node.js</span><i>✦</i><span>MongoDB</span><i>✦</i><span>Hadoop</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ============ WORK ============ -->
+    <section class="section" id="work">
+      <header class="section__head">
+        <span class="section__num mono">01</span>
+        <h2 class="section__title">Selected <em class="serif">work</em></h2>
+        <p class="section__sub">Five projects where I took a hard, messy problem and shipped something that works end to end. Open any card for the full case study.</p>
+      </header>
+
+      <div class="projects">
+        <!-- Project 1 -->
+        <article class="project reveal" data-project="crisis" data-tags="ai">
+          <div class="project__viz" aria-hidden="true"><canvas data-viz="crisis"></canvas></div>
+          <div class="project__body">
+            <div class="project__top mono"><span>01 / 05</span><span>2026 · ML Forecasting</span></div>
+            <h3 class="project__title">Community Crisis Predictor</h3>
+            <p class="project__desc">Forecasts community-wide mental-health crises from Reddit up to a week before they happen. It treats subreddits like weather systems: an LSTM reads 8 weeks of language, sentiment and topic drift and predicts next week's distress state.</p>
+            <ul class="tags"><li>PyTorch LSTM</li><li>XGBoost</li><li>BERTopic</li><li>SHAP</li><li>Streamlit</li><li>LLM briefs</li></ul>
+            <div class="project__links">
+              <button class="link-btn" type="button" data-open="crisis">Case study <span>→</span></button>
+              <a class="link-btn" href="https://github.com/RayaanQ/community-crisis-predictor" target="_blank" rel="noopener">Code ↗</a>
+            </div>
+          </div>
+          <template data-case>
+            <p class="case__kicker mono">Problem</p>
+            <p>Mental-health crises in online communities are only visible after they peak. Moderators and support orgs need a <strong>leading</strong> indicator, not a dashboard of what already happened.</p>
+            <p class="case__kicker mono">Approach</p>
+            <ul>
+              <li><strong>Collect:</strong> configurable sources (Zenodo COVID dataset, PullPush Reddit archive, synthetic) with an idempotent, manifest-tracked ingest and hashed author IDs for privacy.</li>
+              <li><strong>Extract:</strong> weekly feature vectors with VADER sentiment, distress-lexicon density, BERTopic topic distributions and Jensen–Shannon topic drift over 1- and 4-week lookbacks.</li>
+              <li><strong>Label:</strong> four escalation states (Stable → Severe) set by σ-distance from each community's own baseline.</li>
+              <li><strong>Model:</strong> a PyTorch LSTM over 8-week windows, with an XGBoost baseline. Walk-forward CV and per-fold scaling mean <strong>no data leakage</strong>.</li>
+              <li><strong>Decide:</strong> Recall@K against a fixed weekly alert budget, compared with random and persistence baselines.</li>
+              <li><strong>Explain:</strong> SHAP drivers plus RAG over an intervention playbook generate a plain-English weekly brief with an LLM (Claude → GPT-4o → template fallback).</li>
+            </ul>
+            <p class="case__kicker mono">Outcome</p>
+            <p>A full pipeline from raw posts to a Streamlit dashboard with week replay, drift monitoring, SQLite alert logs and static HTML reports.</p>
+          </template>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project reveal" data-project="summarizer" data-tags="ai">
+          <div class="project__viz" aria-hidden="true"><canvas data-viz="summarizer"></canvas></div>
+          <div class="project__body">
+            <div class="project__top mono"><span>02 / 05</span><span>Jul 2025 · GenAI · Chrome Extension</span></div>
+            <h3 class="project__title">Multi-Modal AI Web Page Summarizer</h3>
+            <p class="project__desc">A Chrome extension that reads the page you're on, including embedded PDFs, text inside images and YouTube transcripts, then summarizes it and lets you chat with it. RAG pulls in live web search for context the page doesn't have.</p>
+            <ul class="tags"><li>LangChain Agents</li><li>RAG</li><li>Gemini</li><li>FastAPI</li><li>Tesseract OCR</li><li>Docker</li></ul>
+            <div class="project__links">
+              <button class="link-btn" type="button" data-open="summarizer">Case study <span>→</span></button>
+              <a class="link-btn" href="https://github.com/RayaanQ/AI-Web-Page-Summarizer" target="_blank" rel="noopener">Code ↗</a>
+            </div>
+          </div>
+          <template data-case>
+            <p class="case__kicker mono">Problem</p>
+            <p>Information overload. Real pages are more than text: they're PDFs, screenshots and videos, and most summarizers ignore everything except the HTML.</p>
+            <p class="case__kicker mono">Approach</p>
+            <ul>
+              <li><strong>Multi-modal extraction</strong> runs in parallel: PyPDFLoader for PDFs, Tesseract OCR for images, yt-dlp for YouTube transcripts.</li>
+              <li><strong>Retrieval-Augmented Generation</strong> merges page content with Tavily web search, and every answer cites clickable sources.</li>
+              <li><strong>LangChain agents</strong> drive interactive Q&amp;A with session memory and suggest follow-up questions.</li>
+              <li>A session-level cache keeps repeat queries fast. A FastAPI backend in <strong>Docker</strong> makes it reproducible anywhere.</li>
+            </ul>
+            <p class="case__kicker mono">Outcome</p>
+            <p>One click gives a summary of the whole page, media included, and you can keep asking questions with sources cited.</p>
+          </template>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project reveal" data-project="juristrack" data-tags="ai fullstack">
+          <div class="project__viz" aria-hidden="true"><canvas data-viz="juristrack"></canvas></div>
+          <div class="project__body">
+            <div class="project__top mono"><span>03 / 05</span><span>Aug 2025 · Hackathon · RegTech</span></div>
+            <h3 class="project__title">JurisTrack — Geo-Compliance Radar</h3>
+            <p class="project__desc">Scans social-platform feature specs for region-specific legal risk (EU DSA, CCPA, Utah, Florida, NCMEC). It decodes internal jargon, scores risk and links every flag to the clause that triggered it.</p>
+            <ul class="tags"><li>FastAPI</li><li>Gemini</li><li>TF-IDF retrieval</li><li>Explainable AI</li><li>React</li><li>Recharts</li></ul>
+            <div class="project__links">
+              <button class="link-btn" type="button" data-open="juristrack">Case study <span>→</span></button>
+              <a class="link-btn" href="https://github.com/RayaanQ/JurisTrack" target="_blank" rel="noopener">Code ↗</a>
+            </div>
+          </div>
+          <template data-case>
+            <p class="case__kicker mono">Problem</p>
+            <p>Every new feature at a global platform has to clear a patchwork of regional laws. Manual legal review is slow, and internal codenames hide what a feature actually does.</p>
+            <p class="case__kicker mono">Approach</p>
+            <ul>
+              <li><strong>Jargon resolver</strong> expands platform-specific terminology so the analysis reads the feature the way a lawyer would.</li>
+              <li><strong>TF-IDF regulation search</strong> over five regulations, with an API that pulls text directly from the source documents.</li>
+              <li><strong>Multi-factor risk score:</strong> child safety (40), data privacy (30), content moderation (25), tiered Low / Medium / High.</li>
+              <li><strong>Gemini reasoning</strong> with a deterministic rule-based fallback, so the system still works with no API key.</li>
+              <li>Full SQLite audit trail, batch mode and CSV export for regulators.</li>
+            </ul>
+            <p class="case__kicker mono">Outcome</p>
+            <p>An explainable compliance dashboard designed to cut manual review time by about 80%.</p>
+          </template>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project reveal" data-project="greenory" data-tags="ai">
+          <div class="project__viz" aria-hidden="true"><canvas data-viz="greenory"></canvas></div>
+          <div class="project__body">
+            <div class="project__top mono"><span>04 / 05</span><span>Dec 2024 · Sustainable Software</span></div>
+            <h3 class="project__title">Greenory — Intelligent Carbon Tracker</h3>
+            <p class="project__desc">Estimates the carbon footprint of your code and suggests lower-carbon rewrites. It parses Abstract Syntax Trees first so the LLM only sees the hotspots. Fewer queries means lower cost and less energy, which is the whole point.</p>
+            <ul class="tags"><li>AST analysis</li><li>LLM suggestions</li><li>GitHub integration</li><li>Energy modelling</li></ul>
+            <div class="project__links">
+              <button class="link-btn" type="button" data-open="greenory">Case study <span>→</span></button>
+            </div>
+          </div>
+          <template data-case>
+            <p class="case__kicker mono">Problem</p>
+            <p>Software's energy cost is invisible to the developers writing it. And a tool that asks an LLM to review every line burns carbon to save carbon.</p>
+            <p class="case__kicker mono">Approach</p>
+            <ul>
+              <li>Pull code straight from <strong>GitHub</strong> or by file upload.</li>
+              <li>Estimate energy use per construct and roll it up into a footprint developers and orgs can act on.</li>
+              <li><strong>AST-guided prompting:</strong> static analysis finds the expensive patterns, so the LLM only rewrites what matters.</li>
+            </ul>
+            <p class="case__kicker mono">Outcome</p>
+            <p>Concrete, low-carbon code suggestions with far fewer LLM calls than a naive review loop.</p>
+          </template>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="project reveal" data-project="lingoleap" data-tags="fullstack ai">
+          <div class="project__viz" aria-hidden="true"><canvas data-viz="lingoleap"></canvas></div>
+          <div class="project__body">
+            <div class="project__top mono"><span>05 / 05</span><span>Jan 2024 · EdTech · Accessibility</span></div>
+            <h3 class="project__title">LingoLeap — Speech Therapy, Gamified</h3>
+            <p class="project__desc">A web app for children in Hindi-speaking communities with misarticulation. Speech recognition checks pronunciation, and game mechanics keep kids coming back to practise between therapy sessions.</p>
+            <ul class="tags"><li>Next.js</li><li>TypeScript</li><li>Node.js</li><li>MongoDB</li><li>Speech recognition</li><li>JWT</li></ul>
+            <div class="project__links">
+              <button class="link-btn" type="button" data-open="lingoleap">Case study <span>→</span></button>
+              <a class="link-btn" href="https://github.com/RayaanQ/Misarticulation-Project" target="_blank" rel="noopener">Code ↗</a>
+            </div>
+          </div>
+          <template data-case>
+            <p class="case__kicker mono">Problem</p>
+            <p>Speech-therapy material is scarce in Hindi, and drills are boring for kids, so practice drops off between sessions.</p>
+            <p class="case__kicker mono">Approach</p>
+            <ul>
+              <li>Speech recognition scores pronunciation attempts in real time.</li>
+              <li>Hindi therapy content wrapped in gamified progression.</li>
+              <li>Next.js + TypeScript front end, Node/Express API, MongoDB, with email verification and JWT auth.</li>
+            </ul>
+            <p class="case__kicker mono">Outcome</p>
+            <p>An accessible, encouraging practice tool that brings therapy home.</p>
+          </template>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section about" id="about">
+      <header class="section__head">
+        <span class="section__num mono">02</span>
+        <h2 class="section__title">About <em class="serif">me</em></h2>
+      </header>
+      <p class="statement" id="statement">
+        I'm a Master's student in Artificial Intelligence at the National University of Singapore. I came from a
+        Computer Engineering degree in Mumbai, where I graduated with a 9.97/10 GPA. I like the part of AI where models
+        meet the real world: retrieval, agents, evaluation, deployment. The question I keep asking is
+        whether the system actually helps someone decide something.
+      </p>
+
+      <div class="stats">
+        <div class="stat reveal"><span class="stat__num" data-count="9.97" data-decimals="2">0</span><span class="stat__label">GPA out of 10 · B.E. Computer Engineering</span></div>
+        <div class="stat reveal"><span class="stat__num">AWS</span><span class="stat__label">Certified Developer – Associate (2025 – 2028)</span></div>
+        <div class="stat reveal"><span class="stat__num" data-count="1">0</span><span class="stat__label">Springer Nature conference publication</span></div>
+        <div class="stat reveal"><span class="stat__num" data-count="3">0</span><span class="stat__label">Institute-level competition wins</span></div>
+      </div>
+
+      <div class="toolbox">
+        <div class="toolbox__group reveal">
+          <h3 class="mono">AI / ML</h3>
+          <ul class="chips"><li>LangChain</li><li>LLM Agents</li><li>RAG</li><li>PyTorch</li><li>TensorFlow</li><li>XGBoost</li><li>BERTopic</li><li>SHAP</li></ul>
+        </div>
+        <div class="toolbox__group reveal">
+          <h3 class="mono">Languages</h3>
+          <ul class="chips"><li>Python</li><li>C++</li><li>JavaScript</li><li>TypeScript</li><li>SQL</li><li>HTML / CSS</li></ul>
+        </div>
+        <div class="toolbox__group reveal">
+          <h3 class="mono">Backend &amp; Web</h3>
+          <ul class="chips"><li>FastAPI</li><li>Node.js</li><li>Express</li><li>Spring Boot</li><li>React</li><li>Next.js</li><li>Streamlit</li></ul>
+        </div>
+        <div class="toolbox__group reveal">
+          <h3 class="mono">Data &amp; Cloud</h3>
+          <ul class="chips"><li>AWS</li><li>Docker</li><li>Apache Hadoop</li><li>MongoDB</li><li>MySQL</li><li>SQLite</li><li>Git</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section" id="experience">
+      <header class="section__head">
+        <span class="section__num mono">03</span>
+        <h2 class="section__title">Experience &amp; <em class="serif">education</em></h2>
+      </header>
+
+      <ol class="timeline">
+        <li class="tl reveal">
+          <div class="tl__when mono">Aug 2025 — Now</div>
+          <div class="tl__what">
+            <h3>Master of Computing, Artificial Intelligence</h3>
+            <p class="tl__org">National University of Singapore</p>
+            <p>AI Ethics &amp; Governance · Neural Networks &amp; Deep Learning · Big Data Systems</p>
+          </div>
+        </li>
+        <li class="tl reveal">
+          <div class="tl__when mono">Dec 2023</div>
+          <div class="tl__what">
+            <h3>Application Support Engineer Intern</h3>
+            <p class="tl__org">Sandoz India · Mumbai</p>
+            <p>Kept <strong>99% uptime</strong> for 500+ users across manufacturing and R&amp;D, and resolved 10+ application and network incidents in a compliance-driven pharma IT environment.</p>
+          </div>
+        </li>
+        <li class="tl reveal">
+          <div class="tl__when mono">Sep — Oct 2023</div>
+          <div class="tl__what">
+            <h3>Web Development Intern</h3>
+            <p class="tl__org">Innovative Informatics · Mumbai</p>
+            <p>Built Spring Boot and MERN modules for <strong>20+ business partners</strong>, designed REST APIs for products and orders, and secured sessions with JWT auth.</p>
+          </div>
+        </li>
+        <li class="tl reveal">
+          <div class="tl__when mono">Dec 2021 — Jun 2025</div>
+          <div class="tl__what">
+            <h3>B.E. Computer Engineering · <span class="accent">GPA 9.97 / 10</span></h3>
+            <p class="tl__org">University of Mumbai</p>
+            <p>Distributed Systems · Cloud Computing · Data Structures &amp; Algorithms · Computer Networks</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="honors">
+        <div class="honor reveal">
+          <span class="honor__tag mono">Publication · Feb 2025</span>
+          <p class="honor__title">Comparing Advanced Programming Languages Based on ML</p>
+          <p class="muted">Springer Nature Conference</p>
+        </div>
+        <div class="honor reveal">
+          <span class="honor__tag mono">Awards</span>
+          <p class="honor__title">3× institute-level winner</p>
+          <p class="muted">One for innovation, two for business / startup projects</p>
+        </div>
+        <div class="honor reveal">
+          <span class="honor__tag mono">Leadership</span>
+          <p class="honor__title">Vice President &amp; House Captain · MUN Tech Head</p>
+          <p class="muted">Rotaract Club volunteer, mentoring and running technical setup</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ARCHIVE ============ -->
+    <section class="section" id="archive">
+      <header class="section__head">
+        <span class="section__num mono">04</span>
+        <h2 class="section__title">The <em class="serif">archive</em></h2>
+        <p class="section__sub">Everything else I've built, from first full-stack apps to classic ML. Languages and stars sync from GitHub on every deploy.</p>
+      </header>
+
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter" type="button" data-filter="ai" aria-pressed="false">AI / ML</button>
+        <button class="filter" type="button" data-filter="fullstack" aria-pressed="false">Full-stack</button>
+        <button class="filter" type="button" data-filter="cs" aria-pressed="false">CS fundamentals</button>
+      </div>
+
+      <div class="table-wrap">
+        <table class="archive">
+          <thead>
+            <tr><th scope="col">Year</th><th scope="col">Project</th><th scope="col" class="hide-sm">Built with</th><th scope="col" class="num">Repo</th></tr>
+          </thead>
+          <tbody>
+            <tr data-tags="ai" data-repo="community-crisis-predictor"><td class="mono">2026</td><td>Community Crisis Predictor</td><td class="hide-sm">PyTorch · XGBoost · BERTopic · Streamlit</td><td class="num"><a href="https://github.com/RayaanQ/community-crisis-predictor" target="_blank" rel="noopener">↗</a></td></tr>
+            <tr data-tags="cs" data-repo="Data-Structures"><td class="mono">2025</td><td>Linked Lists in C++: beginner to advanced</td><td class="hide-sm">C++</td><td class="num"><a href="https://github.com/RayaanQ/Data-Structures" target="_blank" rel="noopener">↗</a></td></tr>
+            <tr data-tags="ai fullstack" data-repo="JurisTrack"><td class="mono">2025</td><td>JurisTrack — Geo-Compliance Radar</td><td class="hide-sm">FastAPI · Gemini · React · Recharts</td><td class="num"><a href="https://github.com/RayaanQ/JurisTrack" target="_blank" rel="noopener">↗</a></td></tr>
+            <tr data-tags="ai" data-repo="AI-Web-Page-Summarizer"><td class="mono">2025</td><td>Multi-Modal AI Web Page Summarizer</td><td class="hide-sm">LangChain · RAG · FastAPI · Docker</td><td class="num"><a href="https://github.com/RayaanQ/AI-Web-Page-Summarizer" target="_blank" rel="noopener">↗</a></td></tr>
+            <tr data-tags="ai"><td class="mono">2024</td><td>Greenory — Intelligent Carbon Tracker</td><td class="hide-sm">AST · LLM · GitHub API</td><td class="num muted">—</td></tr>
+            <tr data-tags="ai" data-repo="SMS-Spam-Classifier"><td class="mono">2024</td><td>SMS Spam Classifier</td><td class="hide-sm">NLP · scikit-learn · Streamlit</td><td class="num"><a href="https://github.com/RayaanQ/SMS-Spam-Classifier" target="_blank" rel="noopener">↗</a></td></tr>
+            <tr data-tags="fullstack ai" data-repo="Misarticulation-Project"><td class="mono">2024</td><td>LingoLeap — gamified speech therapy</td><td class="hide-sm">Next.js · Node · MongoDB</td><td class="num"><a href="https://github.com/RayaanQ/Misarticulation-Project" target="_blank" rel="noopener">↗</a></td></tr>
+            <tr data-tags="ai" data-repo="Movie-Recommendation-System"><td class="mono">2023</td><td>Movie Recommender (TMDB 5000)</td><td class="hide-sm">Content-based ML · Streamlit · TMDB API</td><td class="num"><a href="https://github.com/RayaanQ/Movie-Recommendation-System" target="_blank" rel="noopener">↗</a></td></tr>
+            <tr data-tags="fullstack" data-repo="Fitness-Tracker-API"><td class="mono">2023</td><td>Fitness Tracker</td><td class="hide-sm">MongoDB · Express · React · Node</td><td class="num"><a href="https://github.com/RayaanQ/Fitness-Tracker-API" target="_blank" rel="noopener">↗</a></td></tr>
+            <tr data-tags="fullstack" data-repo="Hospital-Management-System"><td class="mono">2023</td><td>Hospital Management System</td><td class="hide-sm">Node.js · MongoDB · HTML/CSS</td><td class="num"><a href="https://github.com/RayaanQ/Hospital-Management-System" target="_blank" rel="noopener">↗</a></td></tr>
+            <tr data-tags="fullstack" data-repo="Tourist-Places-Management-System"><td class="mono">2023</td><td>Tourist Places Management System</td><td class="hide-sm">Flask · SQLite</td><td class="num"><a href="https://github.com/RayaanQ/Tourist-Places-Management-System" target="_blank" rel="noopener">↗</a></td></tr>
+            <tr data-tags="fullstack" data-repo="Matrimonial-Website"><td class="mono">2023</td><td>Matrimonial Website</td><td class="hide-sm">PHP · MySQL</td><td class="num"><a href="https://github.com/RayaanQ/Matrimonial-Website" target="_blank" rel="noopener">↗</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact">
+      <p class="mono muted">05 — What's next?</p>
+      <h2 class="contact__title">
+        <span class="line">Let's build</span>
+        <span class="line"><em class="serif">something</em> smart.</span>
+      </h2>
+      <p class="contact__lede">I'm looking for AI / ML engineering roles and research collaborations. If you're working on retrieval, agents or applied ML, I'd love to hear from you.</p>
+      <div class="contact__actions">
+        <button class="email magnetic" id="copyEmail" type="button" data-email="rayyaanquraishi@gmail.com">
+          <span class="email__addr">rayyaanquraishi@gmail.com</span>
+          <span class="email__hint mono" id="copyHint">click to copy</span>
+        </button>
+      </div>
+      <ul class="socials">
+        <li><a href="https://github.com/RayaanQ" target="_blank" rel="noopener">GitHub ↗</a></li>
+        <li><a href="https://www.linkedin.com/in/rayaan-quraishi" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+        <li><a href="mailto:rayyaanquraishi@gmail.com">Email ↗</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer mono">
+    <span>© <span id="year">2026</span> Rayaan Quraishi</span>
+    <span class="hide-sm">Hand-coded · no frameworks · hosted free on GitHub Pages</span>
+    <span>Press <kbd>`</kbd> for a terminal</span>
+  </footer>
+
+  <!-- Case study dialog -->
+  <dialog class="case" id="caseDialog" aria-labelledby="caseTitle">
+    <div class="case__inner">
+      <button class="case__close icon-btn" type="button" id="caseClose" aria-label="Close case study">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <p class="mono muted" id="caseMeta"></p>
+      <h2 id="caseTitle"></h2>
+      <ul class="tags" id="caseTags"></ul>
+      <div class="case__content" id="caseContent"></div>
+      <div class="project__links" id="caseLinks"></div>
+    </div>
+  </dialog>
+
+  <!-- Command palette -->
+  <dialog class="palette" id="palette" aria-label="Command menu">
+    <div class="palette__box">
+      <input class="palette__input" id="paletteInput" type="text" placeholder="Type a command or search…" autocomplete="off" spellcheck="false" aria-label="Search commands" />
+      <ul class="palette__list" id="paletteList" role="listbox"></ul>
+      <div class="palette__foot mono"><span>↑↓ navigate</span><span>↵ select</span><span>esc close</span></div>
+    </div>
+  </dialog>
+
+  <!-- Terminal -->
+  <dialog class="term" id="term" aria-label="Terminal">
+    <div class="term__bar">
+      <span class="term__dots"><i></i><i></i><i></i></span>
+      <span class="mono">guest@rayaan: ~</span>
+      <button class="term__x" type="button" id="termClose" aria-label="Close terminal">×</button>
+    </div>
+    <div class="term__body mono" id="termBody">
+      <div id="termOut" aria-live="polite"></div>
+      <form class="term__line" id="termForm" autocomplete="off">
+        <label for="termInput"><span class="accent">guest@rayaan</span>:<span class="muted">~</span>$</label>
+        <input id="termInput" type="text" spellcheck="false" autocapitalize="off" />
+      </form>
+    </div>
+  </dialog>
+
+  <div class="toast mono" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
